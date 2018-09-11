@@ -25,6 +25,7 @@ Y = dataset.iloc[:,13].values
 #Phase - 3:
 #encoding the categerical data
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+
 labelencoder_X_1 = LabelEncoder()
 X[:,1] = labelencoder_X_1.fit_transform(X[:,1])
 
@@ -45,6 +46,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size = 0.25, random
 #Phase - 4 : 
 #feature_scalling
 from sklearn.preprocessing import StandardScaler
+
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
@@ -86,4 +88,6 @@ Y_pred = (Y_pred > 0.5)
 
 #making the confusion Metrix
 from sklearn.metrics import confusion_matrix
+
+#creating cofusion metrix
 cm = confusion_matrix(Y_test,Y_pred)
