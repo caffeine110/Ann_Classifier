@@ -1,11 +1,15 @@
+#!/usr/bin/env pyth on3 Spyder Editor
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Created on Tue Aug 21 12:06:22 2018
 
-aim : TO build Ann which predicts which employee is likely to leave the job
-date :18/6/18
+@author : Gaurav Gahukar
+
+AIM     : TO build Ann which predicts which Customer is most likely to leave the job
+        : implimenting ANN in Sklearn
 
 """
+
 
 #PART -- 1 :
 
