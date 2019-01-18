@@ -31,7 +31,10 @@ def build_Model():
     clf_model = Sequential()
     
     #Adding input layer and one Hiden layer 
-    clf_model.add(Dense(output_dim = 8, init = 'uniform', activation= 'relu', input_dim = 11))
+    clf_model.add(Dense(output_dim = 11, init = 'uniform', activation= 'relu', input_dim = 11))
+
+    #Adding the second hidden layer
+    clf_model.add(Dense(output_dim = 8, init = 'uniform', activation='relu'))
     
     #Adding the second hidden layer
     clf_model.add(Dense(output_dim = 6, init = 'uniform', activation='relu'))
@@ -98,7 +101,7 @@ def main():
 
 
     ### fitting the model
-    history = clf_model.fit(X_train, Y_train, batch_size = 10, nb_epoch = 100, validation_split=0.2, callbacks=[early_stopping])
+    history = clf_model.fit(X_train, Y_train, batch_size = 8, nb_epoch = 200, validation_split=0.2, callbacks=[early_stopping])
 
     save_Model(clf_model)
     save_Weights(clf_model)
