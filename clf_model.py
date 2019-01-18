@@ -4,6 +4,7 @@
 Created on Tue Aug 21 12:06:22 2018
 
 @author : Gaurav Gahukar
+        : caffeine110
 
 AIM     : TO build Ann which predicts which Customer is most likely to leave the job
         : implimenting ANN in Sklearn
@@ -11,6 +12,7 @@ AIM     : TO build Ann which predicts which Customer is most likely to leave the
 """
 
 
+###############################################################################
 ### importing data
 def get_Data():
     ### importing data
@@ -19,6 +21,7 @@ def get_Data():
 
 
 
+###############################################################################
 ### Building model
 def build_Model():
     ### Importing keras libraries and packages
@@ -46,15 +49,20 @@ def build_Model():
     return clf_model
 
 
+
+###############################################################################
 def save_Model(clf_model):
     #from keras.models import load_model
     clf_model.save('saved_model/my_clf_Model.h5')  # creates a HDF5 file 'my_model.h5'
 
 
+###############################################################################
 def save_Weights(clf_model):
     clf_model.save_weights('checkpoints/my_clf_Model_weights.h5')
 
 
+
+###############################################################################
 # summarize history for loss
 def plot_Loss(history):
     ### importing matplotlib
@@ -70,6 +78,8 @@ def plot_Loss(history):
     plt.show()
     
 
+
+###############################################################################
 # summarize history for accuracy
 def plot_Accuracy(history):
     ### importing matplotlib
@@ -86,6 +96,8 @@ def plot_Accuracy(history):
     plt.show()
 
 
+
+###############################################################################
 ### main method
 def main():
     ### function call to get data    
@@ -115,8 +127,7 @@ def main():
     
 
 
-
-
-
+###############################################################################
 if __name__ == "__main__":
     main()
+    

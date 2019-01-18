@@ -4,8 +4,9 @@
 Created on Tue Aug 21 12:06:22 2018
 
 @author : Gaurav Gahukar
-
-AIM     : TO build Ann which predicts which Customer is most likely to leave the job
+        : caffeine110
+        
+AIM     : To build Ann which predicts which Customer is most likely to leave the job
         : implimenting ANN in Sklearn
 
 """
@@ -29,19 +30,22 @@ def build_Model():
 
 
     #initialisation of ANN model
-    saved_model = Sequential()
+    clf_model = Sequential()
     
     #Adding input layer and one Hiden layer 
-    saved_model.add(Dense(output_dim = 8, init = 'uniform', activation= 'relu', input_dim = 11))
+    clf_model.add(Dense(output_dim = 11, init = 'uniform', activation= 'relu', input_dim = 11))
+
+    #Adding the second hidden layer
+    clf_model.add(Dense(output_dim = 8, init = 'uniform', activation='relu'))
     
     #Adding the second hidden layer
-    saved_model.add(Dense(output_dim = 6, init = 'uniform', activation='relu'))
+    clf_model.add(Dense(output_dim = 6, init = 'uniform', activation='relu'))
     
     #Adding the output layer
-    saved_model.add(Dense(output_dim = 1, init='uniform', activation='sigmoid'))
-    saved_model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics=['accuracy'])
+    clf_model.add(Dense(output_dim = 1, init='uniform', activation='sigmoid'))
+    clf_model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics=['accuracy'])
 
-    return saved_model
+    return clf_model
 
 
 
@@ -121,6 +125,11 @@ def main():
     pass
 
 
+
+
+
+
+###############################################################################
 if __name__ == '__main__':
     main()
 
